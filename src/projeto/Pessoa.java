@@ -11,6 +11,8 @@ public class Pessoa {
     private String endereco;
     private String telefone;
     private double valorConta;
+    private double chequeEspecial;
+
 
     public int getCodigo() {
         return codigo;
@@ -47,13 +49,21 @@ public class Pessoa {
     public double getValorConta() {
         return valorConta;
     }
+    
+        public double getChequeEspecial() {
+        return chequeEspecial;
+    }
+
+    public void setChequeEspecial(double chequeEspecial) {
+        this.chequeEspecial = chequeEspecial;
+    }
 
     public void setValorConta(double valorConta) {
         this.valorConta = valorConta;
     }
     
     public boolean credito(double valorTransferencia){
-        if(valorTransferencia <= this.valorConta){
+        if(valorTransferencia <= (this.valorConta + this.chequeEspecial)) {
             this.valorConta -= valorTransferencia;
             System.out.println("Transferência realizada.");
             return true;
@@ -67,6 +77,7 @@ public class Pessoa {
         this.valorConta += valor;
     }
     
+
     @Override
     public String toString(){
         return "Nome: " + nome + "\nSaldo: " + valorConta;

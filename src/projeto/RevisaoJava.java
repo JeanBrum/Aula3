@@ -19,6 +19,7 @@ public class RevisaoJava {
         pessoa1.setEndereco("Lajeado");
         pessoa1.setTelefone("190");
         pessoa1.setValorConta(500);
+       
         
         pessoa2.setCodigo(2);
         pessoa2.setNome("João");
@@ -30,7 +31,7 @@ public class RevisaoJava {
         System.out.println(pessoa2);
         System.out.println("-------------------");
         
-        double valorTransferencia = 100;
+        double valorTransferencia = 0;
         System.out.println("Valor da Transferência: R$ " + valorTransferencia);
         
         if(pessoa1.credito(valorTransferencia) == true){
@@ -43,7 +44,7 @@ public class RevisaoJava {
         System.out.println(pessoa2);
         System.out.println("-------------------");
         
-        valorTransferencia = 85.50;
+        valorTransferencia = 100;
         System.out.println("Valor da Transferência: R$ " + valorTransferencia);
         if(pessoa2.credito(valorTransferencia) == true){
             pessoa1.debito(valorTransferencia);
